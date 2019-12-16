@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" >
+<meta name="viewport" content= "width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="filesearch.js"></script>
+<script type="text/javascript" src="CSE_google.js"></script>
+<title> cs355 homepage</title>
+<link href="header.css" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+<div id="top-section-header" class= "top-section">
+  <style>  #announcement-header {background-color: #000000; color: #fefefe;}
+  #announcement-header a {color: #fefefe;}
+  #announcement-header a:hover {color: #02a2fa;}
+  header {
+    background-color: #61B1C0; 
+  
+  text-transform: uppercase;
+  }
+
+  
+  .main-nav a, .main-nav a span, #subnav a {color: #fefefe;
+    text-decoration: none;}
+  .main-nav a:hover, #subnav a:hover {color: #02a2fa; text-decoration: underline;}
+  .main-nav a:hover span {color: #02a2fa;}
+   .dropdown ul {background-color: #fefefe;}
+  .dropdown a {color: #4a4a4a; border-bottom: 1px solid #ccc;}
+  .dropdown .fa {color: #fefefe;}
+ 
+  
+ .hamburger .lines {background: #fefefe;}
+  .hamburger .lines::before, .hamburger .lines::after {background: #fefefe;}
+
+
+</style>
+<section id="announcement-header">
+  <div class="holder flex headpad">
+    <div id="entrance_announce">
+      welcome to my page!!!!!!!!!!!!
+    </div>
+  </div>
+  
+</section>
+<header id= "mainhead">
+<div class="holder flex headpad">
+  <div id="logo_holder">
+    <a href="https://venus.cs.qc.cuny.edu/~crjo0143/cs355/"> 
+    <img src="images/7192aba79d27adfc557422a00fcb9df6.jpg">
+    </a>
+  </div>
+
+  <nav id="desk_nav">
+    <ul class= "main-nav">
+      <li>
+        <a href ="#" data-trigger-parent="Course">Course<span class="fa fa-chevron-down"></span></a>
+      </li>
+<li><a href="#" data-trigger-parent="About">About<span class="fa fa-chevron-down"></span></a></a></li>
+<li><a href="#" data-trigger-parent="Browser">Browser<span class="fa fa-chevron-down"></span></a></a></li>
+</ul>
+</nav>
+<nav id="mobile_nav">
+<button class="menu-link lines-button hamburger"><span class="lines"></span></button>
+<div class="mobmenu" id="mobmenu"> 
+  <ul class="level-1">
+    <li class="has-subnav" data-trigger-mobile="Course">
+    <a class="firstlvl" href="#" style="right: 3px;">Course
+    </a>
+
+      <ul class="level-2 mega-mobile mega_mobile1" style="display: none;">
+       <section class="mega_menu mega_menu1" data-trigger="Course">
+           <div class="megablocks">
+      <a href="https://zybooks.zyante.com/#/zybooks" class="mega_collection" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(images/RC2A1968.jpg);">
+        Zybook</a>
+         <a href="https://tophat.com" class="mega_collection" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(images/RC2A1906.jpg);">
+        TopHat</a>
+         <a href="https://drive.google.com/drive/folders/1AsHhIFfQ3yNE_m2z4wswRfKh77K0UH9w" class="mega_collection" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(images/tower.jpg);">
+        GoogleDrive</a>
+         <a href="https://www.w3schools.com" class="mega_collection" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(images/RC2A1538.jpg);">
+        w3schools</a>
+  
+          </div>
+      </section>
+    </ul>
+</li>
+<li class="has-subnav" data-trigger-mobile="About">
+    <a class="firstlvl" href="#" style="right: 3px;">About
+    </a>
+
+      <ul class="level-2 mega-mobile mega_mobile2" style="display: none;">
+       <section class="mega_menu " data-trigger="About">
+         
+   <div class="megablocks">
+    
+    <a href="#"  class="mega_collection " style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(images/RC2A0445.jpg);" id="devMob1">
+        Developer</a>
+         <a href="#"  class="mega_collection" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(images/RC2A0445.jpg); display: none;" >
+        Jorge Cruz</a>
+
+        
+         <a href="#" class="mega_collection" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(images/RC2A1779.jpg);" id=devMob2>
+        Email me</a>
+        <a href="#" class="mega_collection" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(images/RC2A1779.jpg); display: none;" >
+        missterjay@yahoo.com</a>
+
+          
+       
+      </div>
+      
+        </section>
+      </ul>
+</li>
+<script>
+  var triggerMob1=document.getElementById("devMob1");
+var triggerMob2=document.getElementById("devMob2");
+
+
+$(triggerMob1).click(function(){
+  $(this).slideUp(),
+  $(this).next().css('display','flex')
+})
+
+$(triggerMob1).next().click(function(){
+  $(this).prev().slideToggle(),
+  $(this).css('display','none')
+})
+
+
+
+$(triggerMob2).click(function(){
+  $(this).slideUp(),
+  $(this).next().css('display','flex')
+})
+
+$(triggerMob2).next().click(function(){
+  $(this).prev().slideToggle(),
+  $(this).css('display','none')
+})
+
+
+
+
+
+
+</script>
+
+    
+
+    <li class="has-subnav" data-trigger-mobile="Browser">
+    <a class="firstlvl active" href="#" style="right: 3px;">Browser
+    </a>
+
+      <ul class="level-2 mega-mobile mega_mobile3" style="display: none;">
+       <section class="mega_menu mega_menu3" data-trigger="Browser">
+
+          <div class="megablocks active" >
+  
+   
+            <div class="mega_linklist">
+             <h3 style="cursor: pointer;" class="has-subnav">Navigator</h3>
+                 <ul style="display: none;">
+                  <li><a id="appNameMob"></a></li>
+                  <li><a id="productMob"></a></li>
+                  <li><a id="appVersionMob"></a></li>
+                  <li><a id="userAgentMob"></a></li>
+                  <li><a id="platformMob"></a></li>
+                  <li><a id="languageMob"></a></li>
+                </ul>
+                <h3 style="cursor: pointer;" class="has-subnav">Window</h3>
+                <ul style="display: none;">
+                  <li><a id="innerHeightMob"></a></li>
+                  <li><a id="innerWidthMob"></a></li>
+                </ul>
+                <h3 style="cursor: pointer;" class="has-subnav">Screen</h3>
+                <ul style="display: none;">
+                  <li><a id="widthMob"></a></li>
+                  <li><a id="heightMob"></a></li>
+                  <li><a id="availWidthMob"></a></li>
+                  <li><a id="availHeightMob"></a></li>
+                  <li><a id="colorDepthMob"></a></li>
+                  <li><a id="pixelDepthMob"></a></li>
+                </ul>
+                <h3 style="cursor: pointer;" class="has-subnav">Location</h3>
+                <ul style="display: none;">
+                  <li><a id="hrefMob"></a></li>
+                  <li><a id="hostnameMob"></a></li>
+                  <li><a id="pathnameMob"></a></li>
+                  <li><a id="protocolMob"></a></li>
+                </ul>
+              
+                <h3 style="cursor: pointer;" class="has-subnav">GeoLocation</h3>
+               <ul style="display: none;">
+                <li><a id="latitudeMob"></a></li>
+              
+              
+                
+              
+            </div>
+
+  </div>
+        </section>
+      </ul>
+    </li>
+
+<script >
+  var megatrigger3 = '[data-trigger="Browser"]';
+var megaparent3 = '[data-trigger-parent="Browser"]';
+var megamobile3 = '[data-trigger-mobile="Browser"]';
+ document.getElementById("appNameMob").innerHTML=navigator.appName;
+document.getElementById("productMob").innerHTML=navigator.product;
+document.getElementById("appVersionMob").innerHTML=navigator.appVersion;
+document.getElementById("userAgentMob").innerHTML=navigator.userAgent;
+document.getElementById("platformMob").innerHTML=navigator.platform;
+document.getElementById("languageMob").innerHTML=navigator.product;
+
+
+document.getElementById("innerHeightMob").innerHTML=window.innerHeight;
+document.getElementById("innerWidthMob").innerHTML=window.innerWidth;
+
+
+
+ document.getElementById("widthMob").innerHTML=screen.width;
+document.getElementById("heightMob").innerHTML=screen.height;
+document.getElementById("availWidthMob").innerHTML=screen.availWidth;
+document.getElementById("availHeightMob").innerHTML=screen.availHeight;
+document.getElementById("colorDepthMob").innerHTML=screen.colorDepth;
+document.getElementById("pixelDepthMob").innerHTML=screen.pixelDepth;
+
+document.getElementById("hrefMob").innerHTML=location.href;
+document.getElementById("hostnameMob").innerHTML=location.hostname;
+document.getElementById("pathnameMob").innerHTML=location.pathname;
+document.getElementById("protocolMob").innerHTML=location.protocol;
+
+var y=document.getElementById("latitudeMob");
+
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+
+
+function showPosition(position) {
+  y.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+  
+
+ 
+
+
+
+  
+$(megaparent3).hover(
+    function(){
+        $(megatrigger3).fadeIn().css('display','flex');},
+    function(){
+        $(megatrigger3).delay(300).hide(0);
+});
+
+
+    $(megamobile3).addClass('has-subnav').append("<a href='#' class='fa plus' style='right: 3px;'></a>").append("<ul class='level-2 mega-mobile mega_mobile3'></ul>");
+$('#top-section-mega-menu3').clone().appendTo('.mega_mobile3');      
+
+
+</script>
+   
+
+
+  </ul>
+
+</div>
+  
+</nav>
+
+ 
+
+
+</div>
+<div id="megaholder">
+  <section id="top-section-mega-menu1" class="mega-menu-section">
+  <div class="mega_menu" data-trigger="Course" style="display:none;">
+   <div class="megablocks">
+    <a href="https://zybooks.zyante.com/#/zybooks" class="mega_collection" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(images/RC2A1968.jpg);">
+        Zybook</a>
+         <a href="https://tophat.com" class="mega_collection" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(images/RC2A1906.jpg);">
+        TopHat</a>
+         <a href="https://drive.google.com/drive/folders/1AsHhIFfQ3yNE_m2z4wswRfKh77K0UH9w" class="mega_collection" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(images/tower.jpg);">
+        GoogleDrive</a>
+         <a href="https://www.w3schools.com" class="mega_collection" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(images/RC2A1538.jpg);">
+        w3schools</a>
+  
+</div>
+</div>
+</section>
+<script >
+  var megatrigger = '[data-trigger="Course"]';
+var megaparent = '[data-trigger-parent="Course"]';
+var megamobile = '[data-trigger-mobile="Course"]';
+
+$(megaparent).next().remove();
+
+
+  
+$(megaparent).hover(
+    function(){
+        $(megatrigger).fadeIn().css('display','flex');},
+    function(){
+        $(megatrigger).delay(300).hide(0);
+});
+  
+$(megamobile).children(".notmega").remove();      
+
+$(megamobile).addClass('has-subnav').append("<a href='#' class='fa plus' style='right: 3px;'></a>").append("<ul class='level-2 mega-mobile mega_mobile1'></ul>");
+$('#top-section-mega-menu1').clone(true, true).contents().appendTo('.mega_mobile1');
+
+</script>
+
+ <div id="top-section-mega-menu2" class="mega-menu-section">
+  <section class="mega_menu" data-trigger="About" style="display:none;">
+  
+   <div class="megablocks">
+    <div class="mega_image" style="background-image: url(images/d5dc-a71c-2590-a3e2.jpg)">
+    </div>
+    <a href="#" class="mega_collection" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(images/RC2A0445.jpg);" id="dev">
+        Developer</a>
+         <a href="#" class="mega_collection" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(images/RC2A1779.jpg);" id="contactUs">
+        Contact us</a>
+        <div class="mega_image" style="background-image: url(images/RC2A1382.jpg)">
+    </div>
+      </div>
+ 
+</section>
+</div>
+
+<script >
+  var megatrigger2 = '[data-trigger="About"]';
+var megaparent2 = '[data-trigger-parent="About"]';
+var megamobile2 = '[data-trigger-mobile="About"]';
+
+$(megatrigger2).children("div").children("#dev").hover(function(){
+
+  
+$(this).text("Jorge Cruz")
+
+
+
+},function(){
+   $(this).fadeIn(),
+  $(this).text("Developer")
+
+})
+
+$(megatrigger2).children("div").children("#contactUs").hover(function(){
+
+  
+$(this).text("missterjay@yahoo.com")
+
+
+
+},function(){
+   $(this).fadeIn(),
+  $(this).text("Contact Us")
+})
+
+  
+$(megaparent2).hover(
+    function(){
+        $(megatrigger2).fadeIn().css('display','flex');},
+    function(){
+        $(megatrigger2).delay(300).hide(0);
+});
+        $(megamobile2).children(".notmega").remove();      
+
+$(megamobile2).addClass('has-subnav').append("<a href='#' class='fa plus' style='right: 3px;'></a>").append("<ul class='level-2 mega-mobile mega_mobile2'></ul>");
+$('#top-section-mega-menu2').clone(true, true).contents().appendTo('.mega_mobile2'); 
+
+
+</script>
+<div class="mega-menu-section" id="top-section-mega-menu3">
+  <section class="mega_menu" data-trigger="Browser" style="display:none;">
+ 
+
+ <div class="megablocks" >
+  <div class="mega_image" style="background-image: url(images/RC2A0289.jpg); width:50%;">
+    </div>
+   
+            <div class="wimage mega_linklist ">
+                <h3 style="cursor: pointer;" class="has-subnav">Navigator</h3>
+                 <ul style="display: none;">
+                  <li><a id="appName"></a></li>
+                  <li><a id="product"></a></li>
+                  <li><a id="appVersion"></a></li>
+                  <li><a id="userAgent"></a></li>
+                  <li><a id="platform"></a></li>
+                  <li><a id="language"></a></li>
+                </ul>
+                <h3 style="cursor: pointer;" class="has-subnav">Window</h3>
+                <ul style="display: none;">
+                  <li><a id="innerHeight"></a></li>
+                  <li><a id="innerWidth"></a></li>
+                </ul>
+                <h3 style="cursor: pointer;" class="has-subnav">Screen</h3>
+                <ul style="display: none;">
+                  <li><a id="width"></a></li>
+                  <li><a id="height"></a></li>
+                  <li><a id="availWidth"></a></li>
+                  <li><a id="availHeight"></a></li>
+                  <li><a id="colorDepth"></a></li>
+                  <li><a id="pixelDepth"></a></li>
+                </ul>
+                <h3 style="cursor: pointer;" class="has-subnav">Location</h3>
+                <ul style="display: none;">
+                  <li><a id="href"></a></li>
+                  <li><a id="hostname"></a></li>
+                  <li><a id="pathname"></a></li>
+                  <li><a id="protocol"></a></li>
+                </ul>
+              
+                <h3 style="cursor: pointer;" class="has-subnav">GeoLocation</h3>
+               <ul style="display: none;">
+                <li><a id="latitude"></a></li>
+               
+              </ul>
+            </div>
+
+  </div>
+</section>
+</div>
+<script >
+  var megatrigger3 = '[data-trigger="Browser"]';
+var megaparent3 = '[data-trigger-parent="Browser"]';
+var megamobile3 = '[data-trigger-mobile="Browser"]';
+ document.getElementById("appName").innerHTML=navigator.appName;
+document.getElementById("product").innerHTML=navigator.product;
+document.getElementById("appVersion").innerHTML=navigator.appVersion;
+document.getElementById("userAgent").innerHTML=navigator.userAgent;
+document.getElementById("platform").innerHTML=navigator.platform;
+document.getElementById("language").innerHTML=navigator.product;
+
+
+document.getElementById("innerHeight").innerHTML=window.innerHeight;
+document.getElementById("innerWidth").innerHTML=window.innerWidth;
+
+
+
+ document.getElementById("width").innerHTML=screen.width;
+document.getElementById("height").innerHTML=screen.height;
+document.getElementById("availWidth").innerHTML=screen.availWidth;
+document.getElementById("availHeight").innerHTML=screen.availHeight;
+document.getElementById("colorDepth").innerHTML=screen.colorDepth;
+document.getElementById("pixelDepth").innerHTML=screen.pixelDepth;
+
+document.getElementById("href").innerHTML=location.href;
+document.getElementById("hostname").innerHTML=location.hostname;
+document.getElementById("pathname").innerHTML=location.pathname;
+document.getElementById("protocol").innerHTML=location.protocol;
+
+var x=document.getElementById("latitude");
+
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+  
+
+  $(".has-subnav").on("click",function(){
+
+
+
+    $(this).next("ul").is(":visible")?
+    $(this).next("ul").slideUp():(
+
+  
+  $(this).next("ul").slideToggle()
+
+  )
+  
+
+
+ 
+
+
+
+  }
+
+
+
+
+    );
+
+
+
+  
+$(megaparent3).hover(
+    function(){
+        $(megatrigger3).fadeIn().css('display','flex');},
+    function(){
+        $(megatrigger3).delay(300).hide(0);
+});
+
+
+     
+
+
+</script>
+
+
+</div>
+
+
+
+
+
+
+</header>
+</div>
+<div id= "main-section" >
+  <div class="upload_container">
+   <label class="fileContainer">
+    upload
+    
+
+      <input type="file" id="selectFiles" accept=".json">
+    </label>
+    <label class="fileContainer">
+    download
+   
+
+      <input type="button" id="dlButton" onclick=" dlFiletype()" >
+    </label>
+    
+    
+      <select name="file_type" id ="myselect" onchange="fileType()">
+        <option value="json" id="json">json</option>
+        <option value="xml" id="xml">xml</option>
+        <option value="csv" id="csv">csv</option>
+    </select>
+ 
+
+ 
+
+      <input type="submit" id="import"  value="import" onclick="clickableF()"/>
+      </div>
+<div class= "dl-drop" id= "dl-drop1" style="display:none">
+  <div class="drop-item" id= "jsonDL">json
+  </div>
+  <div class="drop-item" id="xmlDL">xml
+  </div>
+  <div class="drop-item" id="csvDL">csv
+  </div>
+
+</div>
+
+  <div id= "desk_search" class=  "flex main_search">
+    <div  class= "container-4 main_search">
+      <input type="search" id="my_search" >
+      <button class="icon" id="myBtn" onclick="getResults()"><i class="fa fa-search" ></i></button>
+      <script>
+var input = document.getElementById("my_search");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("myBtn").click();
+  }
+});
+</script>
+    </div>
+    
+  </div>
+  <div id='dLanchor'></div>
+
+  <div  class= "results-container" id="resCoin">
+    <div id="results"></div>
+    <div id="sub-results-container"></div>
+
+
+  </div>
+
+</div>
+<script >
+  
+
+ 
+
+</script>
+
+
+<script>
+  $('.hamburger').click( function() {
+    $("#mainhead").toggleClass("menu-active");
+    $(".hamburger").toggleClass("checked");
+    $("body").toggleClass("noscroll");
+    $("html").toggleClass("noscroll");
+    
+  });
+
+
+  
+
+
+  
+$(".mobmenu").on("click", ".has-subnav a", function() {(
+    $(this).siblings("ul").is(":visible") ?
+      ($(this).siblings("ul").slideUp(), $(this).removeClass("active"))
+    :
+      (
+      $(this).closest("ul").children(".has-subnav").children(".active").next("ul").slideUp(),
+      $(this).siblings("ul").children(".has-subnav").children(".active").removeClass("active"),
+      $(this).siblings("ul").slideToggle(),
+      $(this).toggleClass("active"),
+      $(this).siblings(".plus").toggleClass("active")
+      )
+  )
+});
+
+
+
+</script> 
+ 
+</body>
+</html>
+
+
+
