@@ -1,16 +1,46 @@
-var mysql      = require('mysql');
-var connection = mysql.createConnection({
+const express = require('express');
+const fileUpload = require('express-fileupload');
+const bodyParser = require('body-parser');
+const mysql = require('mysql');
+const path = require('path');
+const app = express();
+
+//const {getHomePage} = require('./routes/index');
+var indexRouter= require('./routes/index');
+const port = 5000;
+
+const db = mysql.createConnection({
   host     : '149.4.211.180',
   user     : 'crjo0143',
   password : '12000143',
   database : 'crjo0143'
 });
  
-connection.connect();
- var sqlQuery= 'SHOW tables'
-connection.query(sqlQuery, function (error, results, fields) {
-  if (error) throw error;
-  console.log('The solution is: ', fields);
+// connect to database
+db.connect((err) => {
+    if (err) {
+        throw err;
+    }
+    console.log('Connected to database');
 });
- 
-connection.end();
+global.db = db;
+
+app.set('port', process.env.port || port); // set express to use this port
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs'); // configure template engine
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json()); // parse form data client
+app.use(express.static(path.join(__dirname, 'public'))); // configure express to use public folder
+app.use(fileUpload()); // configure fileupload
+
+
+app.use('/',indexRouter);
+
+
+
+// set the app to listen on the port
+app.listen(port, () => {
+    console.log(`Server running on port: ${port}`);
+});
+
+module.exports = app;

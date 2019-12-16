@@ -1,0 +1,64 @@
+<div id= "sub-section" >
+  <div class="upload_container">
+   <label class="fileContainer">
+    upload
+    
+
+      <input type="file" id="selectFiles" accept=".json">
+    </label>
+    <label class="fileContainer">
+    download
+   
+
+      <input type="button" id="dlButton" onclick=" dlFiletype()" >
+    </label>
+    
+    
+      <select name="file_type" id ="myselect" onchange="fileType()">
+        <option value="json" id="json">json</option>
+        <option value="xml" id="xml">xml</option>
+        <option value="csv" id="csv">csv</option>
+    </select>
+ 
+
+ 
+
+      <input type="submit" id="import"  value="import" onclick="clickableF()"/>
+      </div>
+<div class= "dl-drop" id= "dl-drop1" style="display:none">
+  <div class="drop-item" id= "jsonDL">json
+  </div>
+  <div class="drop-item" id="xmlDL">xml
+  </div>
+  <div class="drop-item" id="csvDL">csv
+  </div>
+
+</div>
+
+  <div id= "desk_search" class=  "flex main_search">
+    <div  class= "container-4 main_search">
+      <input type="search" id="my_search" >
+      <button class="icon" id="myBtn" onclick="getResults()"><i class="fa fa-search" ></i></button>
+      <script>
+var input = document.getElementById("my_search");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("myBtn").click();
+  }
+});
+</script>
+    </div>
+    
+  </div>
+  <div id='dLanchor'></div>
+
+  <div  class= "results-container" id="resCoin">
+    <div id="results"></div>
+    <div id="sub-results-container"></div>
+
+
+  </div>
+
+</div>
+
