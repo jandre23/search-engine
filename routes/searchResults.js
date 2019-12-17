@@ -9,7 +9,7 @@ router.route('/')
 console.log("searchResultspage");
 
 
-res.render('searchResults',{searchType:'Admin Engine'});
+res.render('searchResults',{adminType:'Admin Engine',userType:'Search Engine'});
   
 });
 

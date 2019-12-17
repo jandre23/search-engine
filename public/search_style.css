@@ -417,8 +417,9 @@ background-color: #2b303b;
 
 }
 .results-container{position:relative;
-top:50%;
-width: 80%;
+right:-90px;
+top:50px;
+width: 90%;
 align-content: center;
 background-color: white;
 overflow-y: scroll;
@@ -498,14 +499,6 @@ overflow-y: scroll;
   display: block;
   padding: 0.7em 3%;
   position: relative;
-
-
-}
-
-
-.results-container{
-
-width:100%;
 
 
 }

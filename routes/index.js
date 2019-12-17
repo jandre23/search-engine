@@ -17,7 +17,7 @@ if(err){res.redirect('/');}
 });
 
 
-res.render('index',{searchType: 'Admin'});
+res.render('index',{adminType:'Admin Engine',userType:'Search Engine'});
   
 });
 

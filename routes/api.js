@@ -6,22 +6,13 @@ var app= express();
 
 
 
-router.route('/')
-	.get(function(req,res,next){
-console.log("/api");
 
-
-  res.render('searchResults',{ searchType: 'Search Engine'});
-});
 
 router.route('/searchResults')
 	.post(function(req,res,next){
-console.log("api/searchResults");
+		res.send( { ok: true, data: req.body.word});
+		
 
- res.render('searchResults',{ searchType: 'Search Engine'});
-//res.send({ok: true,content:{ searchType: 'Search Engine'},});
-//res.redirect('/')
-  //res.redirect('/',{ searchType: 'Search Engine'});
 });
 
 module.exports=router;

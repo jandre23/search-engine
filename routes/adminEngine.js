@@ -9,7 +9,7 @@ router.route('/')
 //console.log("adminpage");
 
 
-res.render('adminEngine',{searchType:'Search Engine'});
+res.render('adminEngine',{adminType:'Admin Engine',userType:'Search Engine'});
   
 });
 

@@ -11,7 +11,7 @@ router.route('/')
 		console.log("adminStats");
 		
 
-		res.render('adminStats',{searchType: 'Search Engine'});
+		res.render('adminStats',{adminType:'Admin Engine',userType:'Search Engine'});
   
 });
 
