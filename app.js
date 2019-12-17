@@ -7,8 +7,8 @@ const app = express();
 
 //const {getHomePage} = require('./routes/index');
 var indexRouter= require('./routes/index');
-const port = 5000;
-
+//const port = 5000;
+console.log('ff');
 const db = mysql.createConnection({
   host     : '149.4.211.180',
   user     : 'crjo0143',
@@ -25,7 +25,7 @@ db.connect((err) => {
 });
 global.db = db;
 
-app.set('port', process.env.port || port); // set express to use this port
+//app.set('port', process.env.port || port); // set express to use this port
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs'); // configure template engine
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -37,10 +37,11 @@ app.use(fileUpload()); // configure fileupload
 app.use('/',indexRouter);
 
 
-
+/*
 // set the app to listen on the port
 app.listen(port, () => {
     console.log(`Server running on port: ${port}`);
 });
+*/
 
 module.exports = app;
