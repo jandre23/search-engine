@@ -2,7 +2,7 @@ var currD;
 
 function getResults() {
 searchBar=  document.getElementById("desk_search");
-    searchBar.style.top="10%"
+    
 
   var KEY_API = 'AIzaSyBODTP8nqBX2Msfb-FI1eSmsAnsQXpah7o' 
   var CSE = '007781381915227158219:lh3qtac5vak' 

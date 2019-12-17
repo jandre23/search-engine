@@ -9,7 +9,8 @@ const app = express();
 var indexRouter= require('./routes/index');
 var searchResultsRouter= require('./routes/searchResults');
 var adminEngineRouter= require('./routes/adminEngine');
-var adminStatsRouter= require('./routes/adminStats')
+var adminStatsRouter= require('./routes/adminStats');
+var apiRouter= require('./routes/api');
 //const port = 5000;
 //console.log('ff');
 const db = mysql.createConnection({
@@ -41,6 +42,7 @@ app.use('/',indexRouter);
 app.use('/searchResults',searchResultsRouter);
 app.use('/adminEngine',adminEngineRouter);
 app.use('/adminStats', adminStatsRouter);
+app.use('/api', apiRouter);
 
 
 

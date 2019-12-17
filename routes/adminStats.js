@@ -4,12 +4,14 @@ var app= express();
 
 
 
+
+
 router.route('/')
-.get(function(req,res){
-console.log("adminStatspage");
+	.get(function(req,res){
+		console.log("adminStats");
+		
 
-
-res.render('index');
+		res.render('adminStats',{searchType: 'Search Engine'});
   
 });
 

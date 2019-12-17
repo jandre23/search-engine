@@ -2,7 +2,7 @@
   <div class="holder flex headpad">
     <div id="logo_holder">
       <a href="https://venus.cs.qc.cuny.edu/~crjo0143/cs355/"> 
-        <img src="images/7192aba79d27adfc557422a00fcb9df6.jpg">
+        <img src="/images/7192aba79d27adfc557422a00fcb9df6.jpg">
       </a>
     </div>
 
@@ -11,7 +11,7 @@
     <nav id="desk_nav">
       <ul class= "main-nav">
         <li>
-          <a href ="#" data-trigger-parent="Course">Admin<span class="fa fa-chevron-down"></span></a>
+          <a href ="#" data-trigger-parent="Course"><%= searchType%><span class="fa fa-chevron-down"></span></a>
         </li>
         <li>
           <a href="#" data-trigger-parent="About">About<span class="fa fa-chevron-down"></span></a></a>
@@ -19,6 +19,7 @@
         
       </ul>
     </nav>
+    <%- include ('fileSection.ejs') %>
 
     </div>
     

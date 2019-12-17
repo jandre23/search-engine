@@ -11,40 +11,18 @@ router.route('/')
      console.log("accessd index page");
 db.query(query,(err,result)=>{
 if(err){res.redirect('/');}
-console.log(result);
+//console.log(result);
 
 
 });
 
 
-res.render('index');
-  
-});
-
-router.route('/searchResults')
-	.get(function(req,res){
-		console.log("searchResultspage");
-
-
-		res.render('searchResults');
-  
-});
-
-	
-	router.route('/admin')
-	.get(function(req,res){
-		console.log("admin");
-		var type= admin ;
-
-		res.render('admin',{searchType: 'admin'});
+res.render('index',{searchType: 'Admin'});
   
 });
 
 
 
-/*
-router.route('/page'+resultNum)
-    .get(function)
 
-*/
+
 module.exports=router;

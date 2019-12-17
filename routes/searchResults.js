@@ -4,12 +4,12 @@ var app= express();
 
 
 
-router.route('/searchResults')
+router.route('/')
 .get(function(req,res){
 console.log("searchResultspage");
 
 
-res.render('searchResults');
+res.render('searchResults',{searchType:'Admin Engine'});
   
 });
 

@@ -417,8 +417,8 @@ background-color: #2b303b;
 
 }
 .results-container{position:relative;
-top:15%;
-width: 100%;
+top:50%;
+width: 80%;
 align-content: center;
 background-color: white;
 overflow-y: scroll;

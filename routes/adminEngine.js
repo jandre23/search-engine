@@ -6,10 +6,10 @@ var app= express();
 
 router.route('/')
 .get(function(req,res){
-console.log("adminpage");
+//console.log("adminpage");
 
 
-res.render('index');
+res.render('adminEngine',{searchType:'Search Engine'});
   
 });
 
