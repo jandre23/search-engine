@@ -7,8 +7,11 @@ const app = express();
 
 //const {getHomePage} = require('./routes/index');
 var indexRouter= require('./routes/index');
+var searchResultsRouter= require('./routes/searchResults');
+var adminEngineRouter= require('./routes/adminEngine');
+var adminStatsRouter= require('./routes/adminStats')
 //const port = 5000;
-console.log('ff');
+//console.log('ff');
 const db = mysql.createConnection({
   host     : '149.4.211.180',
   user     : 'crjo0143',
@@ -35,6 +38,10 @@ app.use(fileUpload()); // configure fileupload
 
 
 app.use('/',indexRouter);
+app.use('/searchResults',searchResultsRouter);
+app.use('/adminEngine',adminEngineRouter);
+app.use('/adminStats', adminStatsRouter);
+
 
 
 /*

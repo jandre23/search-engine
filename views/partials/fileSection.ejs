@@ -1,0 +1,28 @@
+
+<div class="upload_container">
+   <label class="fileContainer">upload
+    <input type="file" id="selectFiles" accept=".json">
+   </label>
+    
+   <label class="fileContainer">download
+   	<input type="button" id="dlButton" onclick=" dlFiletype()" >
+   </label>
+    
+   <select name="file_type" id ="myselect" onchange="fileType()">
+        <option value="json" id="json">json</option>
+        <option value="xml" id="xml">xml</option>
+        <option value="csv" id="csv">csv</option>
+   </select>
+ 
+ 	 <input type="submit" id="import"  value="import" onclick="clickableF()"/>
+ 	 
+</div>
+<div class= "dl-drop" id= "dl-drop1" style="display:none">
+  <div class="drop-item" id= "jsonDL">json
+  </div>
+  <div class="drop-item" id="xmlDL">xml
+  </div>
+  <div class="drop-item" id="csvDL">csv
+  </div>
+
+</div>
