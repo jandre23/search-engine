@@ -2,19 +2,16 @@
 var parsedData;
 var checkboxes = document.getElementsByName("index");
 var selectedboxes = [];
-DLfileType;
-var fileType=  function(){
-  var selection1=$( "#myselect option:selected" );
 
-if(selection1.text()=="json"){
-  document.getElementById("selectFiles").accept=".json";
-  console.log(selection1.text());
-}
-  else if(selection1.text()=="xml"){ document.getElementById("selectFiles").accept=".xml";}
-   else if( selection1.text()=="csv"){ document.getElementById("selectFiles").accept=".csv";
-  }
 
-};
+
+
+$(document).ready(function(){
+    $("#myselect").change(function(){
+        var filet = $(this).children("option:selected").val();
+        
+    });
+});
 
 
 
@@ -23,32 +20,27 @@ if(selection1.text()=="json"){
 
  function dlFiletype(){
 
-    var selection1=$( "#myselect option:selected" );
-    var fileType=selection1.txt();
-
-
-
-      downL(fileType);
-
-
-
-
-
- }
+var filet;
+  $(document).ready(function(){
+    filet = $("#myselect").children("option:selected").val();
+     
+     downL(filet);
+});
+}
 
 
 function downL(DLfiletype){
   var url, title, description;
   var urlDownLoad;
   var txt = "";
-
+console.log(DLfiletype);
     for(var i = 0; i < checkboxes.length; i++) {
       if(checkboxes[i].checked){
         selectedboxes.push(i);
       }
     }
 
-    if(DLfiletype.id == "json"){
+    if(DLfiletype== "json"){
       if(typeof parsedData=='undefined')
         {parsedData= getD();
 console.log(parsedData);
@@ -73,7 +65,7 @@ console.log(parsedData);
       filetype = "";
     }
 
-    else if(DLfiletype.id == "csv"){
+    else if(DLfiletype == "csv"){
       if(typeof parsedData=='undefined')
         {parsedData= getD();
 console.log("csv DL data");
@@ -91,7 +83,7 @@ console.log("csv DL data");
       urlDownLoad = "<a href= 'data:text/plain," +  txt + " ' download=\"file.csv\"\>Download CSV</a>";
     }
 
-    else if(DLfiletype.id == "xml"){
+    else if(DLfiletype== "xml"){
       if(typeof parsedData=='undefined')
         {parsedData= getD();
 console.log("xml search dl");

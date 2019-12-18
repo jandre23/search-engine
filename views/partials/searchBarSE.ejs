@@ -1,0 +1,17 @@
+<div id= "desk_search" class=  "flex main_search">
+    <div  class= "container-4 main_search">
+      <input type="search" id="my_search" >
+      <button class="icon" id="SE" ><i class="fa fa-search" ></i></button>
+      <script>
+        var input = document.getElementById("my_search");
+    console.log("clicked");
+        input.addEventListener("keyup", function(event) {
+          if (event.keyCode === 13) {
+     
+           event.preventDefault();
+            document.getElementById("SE").click();
+          }
+        });
+      </script>
+    </div>
+</div>

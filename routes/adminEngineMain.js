@@ -1,4 +1,4 @@
-var express = require('express');
+express = require('express');
 var router = express.Router();
 var app= express();
 
@@ -6,15 +6,13 @@ var app= express();
 
 router.route('/')
 .get(function(req,res){
- 
 
+res.render('adminEngineMain');
 
-res.render('searchEngineMain',{adminType:'Admin Engine',userType:'Search Engine'});
   
 });
 
 
 
-
-
 module.exports=router;
+

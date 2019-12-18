@@ -1,16 +1,18 @@
 <div id='dLanchor'></div>
 
   <div  class= "results-container" id="resCoin" >
-  <% %>
+
     <div id="results"></div>
     <div id="sub-results-container"> 
-    	<a href="#" >
+    	<% for (var i=0;i<page.length;i++){%>
+        <a href="#" >
     		<h2>
 				<input name="index"  type="checkbox" style ="float: right;" value ="val1" >
              </h2>
          </a>
-         <p style="color:#BCE125">data.Result[i].url</p>
-         <p>data.Result[i].description </p>
+         <p style="color:#BCE125"> <%= page[i].word_name %></p>
+         <p><%= page[i].word_id %> </p>
+         <% } %>
 
     </div>
   </div

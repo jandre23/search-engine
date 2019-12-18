@@ -5,14 +5,20 @@ const mysql = require('mysql');
 const path = require('path');
 const app = express();
 
-//const {getHomePage} = require('./routes/index');
+
 var indexRouter= require('./routes/index');
+/*
 var searchResultsRouter= require('./routes/searchResults');
 var adminEngineRouter= require('./routes/adminEngine');
+*/
 var adminStatsRouter= require('./routes/adminStats');
 var apiRouter= require('./routes/api');
-//const port = 5000;
-//console.log('ff');
+
+var serRouter=require('./routes/searchEngineResults');
+var aerRouter=require('./routes/adminEngineResults');
+var seMainRouter=require('./routes/searchEngineMain');
+var aeMainRouter=require('./routes/adminEngineMain');
+
 const db = mysql.createConnection({
   host     : '149.4.211.180',
   user     : 'crjo0143',
@@ -39,10 +45,17 @@ app.use(fileUpload()); // configure fileupload
 
 
 app.use('/',indexRouter);
+/*
 app.use('/searchResults',searchResultsRouter);
 app.use('/adminEngine',adminEngineRouter);
+*/
 app.use('/adminStats', adminStatsRouter);
 app.use('/api', apiRouter);
+
+app.use('/searchEngineResults',serRouter);
+app.use('/adminEngineResults',aerRouter);
+app.use('/searchEngineMain',seMainRouter);
+app.use('/adminEngineMain',aeMainRouter);
 
 
 
