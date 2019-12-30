@@ -8,16 +8,20 @@ var app= express();
 
 router.route('/')
 	.get(function(req,res){
-		console.log("adminStats");
-		
+		let parm= req.params.word;
 
-		res.render('adminStats',{adminType:'Admin Engine',userType:'Search Engine'});
+		let query = "select * from `search`;";
+    
+   
+			db.query(query,(err,result)=>{
+				if(err){console.log('sql error ');
+					return;
+				}
+ console.log(results);
+				res.render('adminStats',{search: result});
+			});
+		
   
 });
 
-/*
-router.route('/page'+resultNum)
-    .get(function)
-
-*/
 module.exports=router;

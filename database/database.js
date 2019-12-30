@@ -1,4 +1,4 @@
-
+const mysql = require('mysql');
 
 function get_links(url,callback){
 
@@ -147,4 +147,4 @@ checkPage('https://en.wikipedia.org/wiki/Leo_Szilard', function(err, page){
   //scrapper($q);
 //}
 
-
+db.end();

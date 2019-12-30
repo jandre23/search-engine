@@ -14,7 +14,7 @@ function callAPI(method, url, message, successCallback) {
             
             // Show the response in the console
             console.log('API response:');
-            console.log(data);
+            //console.log(data);
             
             successCallback(data);
         },

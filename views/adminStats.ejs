@@ -7,7 +7,22 @@
 <div id= "main-section" >
 <%- include ('partials/navBar.ejs') %>
 
-<%- include ('partials/resultsContainer.ejs') %>
+<div id='dLanchor'></div>
+
+  <div  class= "results-container" id="resCoin" >
+
+    <div id="results"></div>
+    <div id="sub-results-container"> 
+    	<% for (var i=0;i<search.length;i++){%>
+       	<p style="color:#BCE125"> <%= search[i].terms %></p>
+         <p><%= search[i].count%> </p>
+         <p><%= page[i].search_date %> </p>
+         <p><%= page[i].search_time %> </p>
+         <% } %>
+
+    </div>
+  </div
+</div>
 
 </div>
 </body>

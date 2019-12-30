@@ -10,10 +10,13 @@ $(function() {
         if (searchWord != "") {
            
            api.post('/adminResults', {word: searchWord}, function(response) {
-               if(response.ok)window.location.replace('/adminEngineResults/'+searchWord);
+               if(response.ok)window.location.replace('/adminEngineResults/'+response.data);
                
             });
         }
     });
 });
+
+
+
 

@@ -7,7 +7,25 @@
 <div id= "main-section" >
 <%- include ('partials/navAE.ejs') %>
 
-<%- include ('partials/resultsContainer.ejs') %>
+<div id='dLanchor'></div>
+
+  <div  class= "results-container" id="resCoin" >
+
+    <div id="results"></div>
+    <div id="sub-results-container"> 
+    	<% for (var i=0;i<page.length;i++){%>
+        
+         <p style="color:#BCE125"> <%= page[i].url%></p>
+         <p><%= page[i].title %> </p>
+         <p><%= page[i].description %> </p>
+         <p><%= page[i].lastModified %> </p>
+         <p><%= page[i].lastIndexed %> </p>
+         <p><%= page[i].lastIndexed %> </p>
+         <% } %>
+
+    </div>
+  </div
+</div>
 
 </div>
 

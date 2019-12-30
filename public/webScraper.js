@@ -1,24 +1,17 @@
 const cheerio = require('cheerio');
 const axios = require('axios');
 
-var mysql=require('mysql');
 
 
-const startUrl ='https://en.wikipedia.org/wiki/Leo_Szilard';
+
+const startUrl ='https://www.qc.cuny.edu/Pages/home.aspx';
 let insert= "insert into `page` (url,title,description,lastModified,lastIndexed,timeToIndex) VAlUES";
 let endquote="')";
 let startquote= "('";
 let query =insert+startquote+startUrl+endquote;
     
      
-db.query(query,(err,result)=>{
-if(err){
-return;
 
-}
-	//console.log(result);
-	//res.send( { ok: true, data: result});
-});
 
 
 axios.get(startUrl).then((response)=>{
@@ -32,12 +25,12 @@ axios.get(startUrl).then((response)=>{
 
 		const urlSpan=$(urlElems[i]).find('a')[0]
 
-console.log($(urlSpan).attr('href'))
+//console.log($(urlSpan).attr('href'))
 		if(urlSpan){
 
 			const urlText= $(urlSpan).text()
 
-			console.log(urlText)
+			//console.log(urlText)
 		}
 	}
 
@@ -59,3 +52,7 @@ function parseAndStore( urlText){
 
 
 }
+
+
+
+

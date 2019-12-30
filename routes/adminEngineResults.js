@@ -2,12 +2,10 @@ var express = require('express');
 var router = express.Router();
 var app= express();
 
-
-
-router.route('/:word')
+router.route('/:url')
 	.get(function(req,res){
-		let parm= req.params.word;
-		let query = "select * from `word` where word_name ='"+parm+"'";
+		let parm= req.params.url;
+		let query = "select * from `page` where pageId ='"+parm+"'";
     	//let value=getPageResults(word);
     	db.query(query,(err,result)=>{
 				if(err){console.log('sql error ');
@@ -17,4 +15,6 @@ router.route('/:word')
 		});
 //res.render('searchResults',{page:value});
 	});
+
+
 module.exports=router;
