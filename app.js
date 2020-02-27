@@ -19,21 +19,6 @@ var aerRouter=require('./routes/adminEngineResults');
 var seMainRouter=require('./routes/searchEngineMain');
 var aeMainRouter=require('./routes/adminEngineMain');
 
-const db = mysql.createConnection({
-  host     : '149.4.211.180',
-  user     : 'crjo0143',
-  password : '12000143',
-  database : 'crjo0143'
-});
- 
-// connect to database
-db.connect((err) => {
-    if (err) {
-        throw err;
-    }
-    console.log('Connected to database');
-});
-global.db = db;
 
 //app.set('port', process.env.port || port); // set express to use this port
 app.set('views', path.join(__dirname, 'views'));

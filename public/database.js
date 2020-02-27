@@ -1,3 +1,22 @@
+const mysql  = require('mysql');
+
+
+const db = mysql.createConnection({
+  host: 'localhost',
+  user:'root',
+  password: 'nylegend23',
+  database:'test'
+
+  });
+
+db.connect((err)=> {
+  if (err){console.log("connection error");
+    throw err;}
+  
+  console.log( "CONNECTED TO DATABASE");
+});
+
+
 
 
 function get_links(url,callback){
@@ -45,8 +64,25 @@ function insert_word(page_id, word, frequency ,callback){
   });
 }
 
+
+function insertUrl( url,lastModified, lastUpdated, callback ){
+
+let query= " insert into `page` ( url, lastModified, lastIndexed) VALUES ( '" +url+  "','"+lastModified+ "','"+ lastUpdated+"');"; 
+db.query( query, ( err,result)=> {
+  if( err) {
+    callback( null,err);
+    return;
+  }
+  callback( result,null);
+  return;
+});
+
+
+
+} 
+
 function checkWord(word,callback){
-  let query = "select count(*) as ncount from `word` WHERE word_name like '"+word+"'";
+  let query = "select count(*) as ncount from `word` WHERE wordName like '"+word+"'";
   
   db.query(query,(err,result)=>{
     if(err){
@@ -54,13 +90,15 @@ function checkWord(word,callback){
       return;
 
     }
-   console.log(result);
-       callback(null,{count:result});
+   console.log(result.rows);
+       //callback(null,{count:result});
     return;
   });
   
 
 }
+
+
 function checkPage(url,callback){
   let query = "select count(*) as ncount from `page` WHERE `url` like '"+url+"'";
   
@@ -80,7 +118,7 @@ function checkPage(url,callback){
 //good
 function getWordID(word,callback){
   
-  let query = "select `word_id` from `word` WHERE word_name like '"+word+"'";
+  let query = "select `wordid` from `word` WHERE wordName like '"+word+"'";
   
   db.query(query,(err,result)=>{
 		if(err){
@@ -89,7 +127,7 @@ function getWordID(word,callback){
 
 		}
 		
-    callback(null,{wordId:result[0].word_id});
+    callback(null,{wordId:result[0].wordid});
 		return;
 	
 });
@@ -117,7 +155,7 @@ function getLinks(url,callback){
 
 }
 
-let str= " empty,'=;' string -.array";
+//let str= " empty,'=;' string -.array";
 
 //let splitstr =str.split(/\b(?!\s)/);
 //let splitstr=str.match(/\b(\w+)\b/g)
@@ -147,4 +185,12 @@ checkPage('https://en.wikipedia.org/wiki/Leo_Szilard', function(err, page){
   //scrapper($q);
 //}
 
+function close(){ db.end(function(err){ if ( err)throw err;}); 
+      
+}
+module.exports = db;
+module.exports.close= close;
+module.exports.getWordID=getWordID;
+module.exports.checkWord= checkWord;
+module.exports.insertUrl= insertUrl;
 

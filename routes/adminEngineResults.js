@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+const db= require( '../public/database.js');
 var app= express();
 
 router.route('/:url')

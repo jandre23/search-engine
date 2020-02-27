@@ -1,5 +1,6 @@
 
-var database = require('../public/database.js');
+const db= require( '../public/database.js');
+//const webScraper = require('.. public/webScraper');
 
 var express = require('express');
 var router = express.Router();
@@ -20,9 +21,9 @@ router.route('/searchResults')
 	.post(function(req,res,next){
 
 		let value= req.body.word;
-		//console.log(value);
+		
 
-let query = "insert into `word` (word_name) VAlUES('"+value+"')";
+let query = "insert into `word` (wordName) VAlUES('"+value+"')";
     
      
 db.query(query,(err,result)=>{
@@ -43,7 +44,7 @@ return;
 	.post(function(req,res,next){
 
 		let value= req.body.word;
-		let query = "insert into `word` (word_name) VAlUES('"+value+"')";
+		let query = "insert into `word` (wordName) VAlUES('"+value+"')";
 		//console.log(value);
     	db.query(query,(err,result)=>{
 			if(err){
@@ -51,7 +52,7 @@ return;
 
 		}
 		console.log(result);
-		let query ="select * from `word` where word_name ='"+value+"'";
+		let query ="select * from `word` where wordName ='"+value+"'";
 	
 
 	//console.log(result);
